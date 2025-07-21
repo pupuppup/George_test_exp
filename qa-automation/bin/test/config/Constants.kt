@@ -1,6 +1,6 @@
 // File: Constants.kt
 // Purpose: Centralizes app package/activity for automation
-// Author: <your name>
+// Author: Taras Mylyi
 // Reads from system properties with defaults
 
 package config

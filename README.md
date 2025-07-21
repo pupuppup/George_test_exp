@@ -1,17 +1,17 @@
 # George Support Call Demo
 
-## Prehľad
+## Overview
 
-Tento repozitár demonštruje vysoko kvalitný prístup k dodávke mobilných funkcií a QA automatizácii pre reálny scenár bankovej aplikácie:
-**"24/7 Podpora volania"** — funkcia umožňujúca autentifikovaným používateľom rýchlo iniciovať podporu z obrazovky Komunikácie.
+This repository demonstrates a high-quality approach to mobile feature delivery and QA automation for a real-world banking app scenario:
+**“24/7 Support Call”** — a feature allowing authenticated users to quickly initiate a support call from the Communications screen.
 
-- **Technológie:** Kotlin, Jetpack Compose, Appium 2, JUnit5, GitHub Actions
-- **QA:** Manuálny dizajn testov, sledovateľnosť, analytika, prístupnosť a robustná automatizácia
-- **Lokalizácia:** Angličtina, Ukrajinčina, Slovenčina
+- **Tech:** Kotlin, Jetpack Compose, Appium 2, JUnit5, GitHub Actions
+- **QA:** Manual test design, traceability, analytics, accessibility, and robust automation
+- **Localization:** English, Slovak
 
 ---
 
-## Štruktúra repozitára
+## Repository Structure
 
 ```text
 .
@@ -72,101 +72,130 @@ Tento repozitár demonštruje vysoko kvalitný prístup k dodávke mobilných fu
 
 ---
 
-## Architektúra
+## Architecture
 
-- **app/**: Android aplikácia (Jetpack Compose, single-activity, modulárna, lokalizovaná)
-- **qa-automation/**: Automatizácia založená na Appium 2 (Kotlin, JUnit5, Page Object)
-- **docs/**: Testovací plán, kritériá prijatia, analytická schéma, sledovateľnosť
-- **.github/workflows/**: CI pipeline (build, emulátor, Appium, testy)
-- **scripts/**: Pomocné skripty pre lokálne nastavenie
+- **app/**: Android app (Jetpack Compose, single-activity, modular, localized)
+- **qa-automation/**: Appium 2-based automation (Kotlin, JUnit5, Page Object)
+- **docs/**: Test plan, acceptance criteria, analytics schema, traceability
+- **.github/workflows/**: CI pipeline (build, emulator, Appium, tests)
+- **scripts/**: Helper scripts for local onboarding
 
 ---
 
-## Ako spustiť
-
-### Predpoklady
+## Prerequisites
 
 - JDK 17+
 - Android SDK (API 33+)
-- Node.js (pre Appium)
-- [Voliteľné] Allure CLI (pre bohaté reporty)
+- Node.js (for Appium)
+- [Optional] Allure CLI (for rich reports)
 
-### 1. Zostavenie a spustenie aplikácie
+---
+
+## How to Run
+
+### 1. Build and Run the App
 
 ```sh
 ./gradlew :app:installDebug
 adb shell am start -n com.example.supportcall/.MainActivity
 ```
 
-### 2. Spustenie automatizácie lokálne
+### 2. Run Automation Locally
 
 ```sh
-# Spustenie emulátora a Appium, potom spustenie testov:
+# Start emulator and Appium, then run tests:
 ./scripts/run_local_env.sh
 ```
 
-Alebo manuálne:
+Or manually:
 
 ```sh
-# Spustenie emulátora (ak nebeží)
+# Start emulator (if not running)
 emulator -avd qaApi33 &
 
-# Spustenie Appium servera
+# Start Appium server
 appium --base-path /wd/hub &
 
-# Spustenie testov
+# Run all tests
 ./gradlew :qa-automation:test
+
+# Run smoke tests
+./gradlew :qa-automation:test --tests "*Smoke*"
 ```
 
 ### 3. CI
 
-- Pozri `.github/workflows/android-ui-tests.yml` pre kompletný pipeline.
-- JUnit XML reporty sú nahrávané ako artefakty.
-- Allure reportovanie je predkonfigurované (zakomentované).
+- See `.github/workflows/android-ui-tests.yml` for the full pipeline.
+- JUnit XML reports are uploaded as artifacts.
+- Allure reporting is preconfigured (commented out).
 
 ---
 
-## Automatizačné testovacie prípady
+## Automation Test Cases
 
-| ID             | Účel                                                      |
-|----------------|------------------------------------------------------------|
-| CallDialerTest | Otvorí volač s správnym číslom, kontroluje package       |
-| DebounceTest   | Overuje debounce: 5 rýchlych tapov = 1 spustenie volača/event |
-| OfflineStateTest| Kontroluje offline deaktivuje tlačidlo, zobrazí banner   |
-| LocalisationTest| Overuje text tlačidla v UA/EN/SK                          |
-| AnalyticsEventTest| Kontroluje poradie a počet analytických eventov         |
+| ID               | Purpose                                                        |
+|------------------|----------------------------------------------------------------|
+| CallDialerTest   | Opens dialer with correct number, checks package               |
+| DebounceTest     | Verifies debounce: 5 rapid taps = 1 dialer launch/event        |
+| OfflineStateTest | Checks offline disables button, shows banner                   |
+| LocalisationTest | Verifies button text in EN/SK                                  |
+| AnalyticsEventTest| Checks analytics event order and count                        |
 
 ---
 
-## Screenshoty
+## Screenshots
 
-> **Poznámka:** Reálne screenshoty nie sú zahrnuté.  
-> Vložte svoje vlastné do:
+> **Note:** Real screenshots are not included.  
+> Drop your own into:
 - `docs/images/communications_screen.png`
 - `docs/images/topic_selection.png`
 - `docs/images/dialer.png`
 
 ---
 
-## Indikátory kvality
+## Quality Indicators
 
-Pozri `docs/quality-metrics.md` pre kompletnú tabuľku.
-
----
-
-## Ukrajinské zhrnutie / Українсьke резюме
-
-Цей репозиторій демонструє повний цикл розробки та тестування мобільної фічі "24/7 Підтримка" для банківського додатку:
-- Локалізація (EN/UA/SK)
-- Автоматизація тестування (Appium + Kotlin)
-- Високоякісний тест-план, критерії приймання, трасування вимог
+See `docs/quality-metrics.md` for the full table.
 
 ---
 
-## Ďalšie vylepšenia
+## Important for Automation (Appium + Jetpack Compose)
 
-- Rozšíriť na ACTION_CALL scenár (s runtime permission handling)
-- Pridať negatívne/edge-case analytiku (napr. support_call_failed)
-- Integrovať Allure reportovanie v CI (odkomentovať v workflow)
-- Pridať viac lokalizácií (pozri `docs/localization-notes.md`)
-- Pridať screenshot-based vizuálne regresné testy 
+**Jetpack Compose does not add resource-id or text for Button elements with testTag!**
+
+- Appium does not see testTag as a resource-id or text in the view hierarchy for Compose Button.
+- The main call button is always found as the first `android.widget.Button` on the screen.
+- Do NOT search for the button by text or content-desc. Always use `By.className("android.widget.Button")`.
+- If you need to check the button's text, do it via unit tests or screenshot/OCR, not via Appium.
+
+---
+
+## How to Run Automation Tests (Appium)
+
+1. **Build and install the app:**
+   ```sh
+   ./gradlew :app:installDebug
+   adb shell am start -n com.example.supportcall/.MainActivity
+   ```
+2. **Start an emulator or connect a real device.**
+3. **Start the Appium server:**
+   ```sh
+   appium --base-path /wd/hub &
+   ```
+4. **Run the automation tests:**
+   ```sh
+   ./gradlew :qa-automation:test
+   ```
+5. **View the reports:**
+   - HTML report: `qa-automation/build/reports/tests/test/index.html`
+   - XML report: `qa-automation/build/test-results/test/`
+
+---
+
+## How element search works in tests
+
+- **The "Call/Zavolať" button** is searched by xpath using visible text.
+- **Topic selection buttons** are also searched by xpath using visible text ("Klientske centrum", "Client centre").
+- If you change the text in the UI, don't forget to update the locators in the tests!
+
+--- 

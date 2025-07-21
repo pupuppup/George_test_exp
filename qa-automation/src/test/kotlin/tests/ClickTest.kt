@@ -1,5 +1,6 @@
 // File: ClickTest.kt
 // Purpose: Simple test to verify button clickability
+// Author: Taras Mylyi
 // Test ID: CLICK-001
 // Priority: ★ Debug
 // Tags: debug

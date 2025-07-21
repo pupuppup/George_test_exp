@@ -1,6 +1,6 @@
 // File: CommunicationsScreen.kt
 // Purpose: Page Object for Communications screen (support card, call button)
-// Author: <your name>
+// Author: Taras Mylyi
 // Used in automation tests
 
 package pages

@@ -1,6 +1,6 @@
 // File: OfflineBanner.kt
 // Purpose: Page Object for offline banner
-// Author: <your name>
+// Author: Taras Mylyi
 // Used in offline state automation tests
 
 package pages

@@ -1,4 +1,5 @@
 // File: AnalyticsEventTest.kt
+// Author: Taras Mylyi
 // Test ID: AUT-AN-TODO
 // Purpose: TODO placeholder - analytics event verification
 // Priority: — TODO
@@ -12,21 +13,11 @@ import pages.TopicSelectionScreen
 import org.junit.jupiter.api.*
 import org.openqa.selenium.support.ui.WebDriverWait
 import java.time.Duration
+import base.BaseTest
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
-class AnalyticsEventTest {
-    private lateinit var driver: io.appium.java_client.android.AndroidDriver
-
-    @BeforeAll
-    fun setup() {
-        driver = DriverFactory.create()
-    }
-
-    @AfterAll
-    fun teardown() {
-        driver.quit()
-    }
+class AnalyticsEventTest : BaseTest() {
 
     @Test
     @Order(1)

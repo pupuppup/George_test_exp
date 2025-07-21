@@ -1,6 +1,6 @@
 // File: DriverFactory.kt
 // Purpose: Factory for AndroidDriver with system property/env config
-// Author: <your name>
+// Author: Taras Mylyi
 // Reads appium.url, app.package, app.activity
 
 package config

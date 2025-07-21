@@ -1,6 +1,6 @@
 // File: MainActivity.kt
 // Purpose: Entry point for the app, sets Compose content
-// Author: <your name>
+// Author:Taras Mylyi
 // MainActivity for single-activity Compose app
 
 package com.example.supportcall

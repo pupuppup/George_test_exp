@@ -1,6 +1,6 @@
 // File: CallDialerTest.kt
 // Purpose: Automation test for dialer open and number check
-// Author: <your name>
+// Author: Taras Mylyi
 // Checks ACTION_DIAL, no CALL_PHONE, package != app, contains dialer/contacts/incall
 
 package tests

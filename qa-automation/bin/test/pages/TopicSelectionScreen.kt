@@ -1,6 +1,6 @@
 // File: TopicSelectionScreen.kt
 // Purpose: Page Object for topic selection screen
-// Author: <your name>
+// Author: Taras Mylyi
 // Used in automation tests
 
 package pages

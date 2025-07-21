@@ -1,5 +1,6 @@
 // File: SimpleTest.kt
 // Purpose: Simple test to verify basic Appium functionality
+// Author: Taras Mylyi
 // Test ID: SIMPLE-001
 // Priority: ★ Debug
 // Tags: debug

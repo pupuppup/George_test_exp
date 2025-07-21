@@ -1,6 +1,6 @@
 // File: SupportCard.kt
 // Purpose: Page Object for isolated support card (for unit/visual tests)
-// Author: <your name>
+// Author: Taras Mylyi
 // Used for future extensibility
 
 package pages

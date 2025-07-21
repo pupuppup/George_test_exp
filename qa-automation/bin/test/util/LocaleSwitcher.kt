@@ -1,6 +1,6 @@
 // File: LocaleSwitcher.kt
 // Purpose: Utility for switching locale in tests (placeholder)
-// Author: <your name>
+// Author: Taras Mylyi
 // TODO: Implement locale switching if needed
 
 package util

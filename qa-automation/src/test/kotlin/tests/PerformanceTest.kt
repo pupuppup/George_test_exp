@@ -1,4 +1,5 @@
 // File: PerformanceTest.kt
+// Author: Taras Mylyi
 // Test ID: AUT-PERF-001
 // Purpose: Nightly test - dialer latency performance check
 // Priority: ★ Nightly
@@ -13,21 +14,12 @@ import org.junit.jupiter.api.*
 import org.openqa.selenium.support.ui.WebDriverWait
 import java.time.Duration
 import org.assertj.core.api.Assertions.assertThat
+import base.BaseTest
+import org.junit.jupiter.api.Tag
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
-class PerformanceTest {
-    private lateinit var driver: io.appium.java_client.android.AndroidDriver
-
-    @BeforeAll
-    fun setup() {
-        driver = DriverFactory.create()
-    }
-
-    @AfterAll
-    fun teardown() {
-        driver.quit()
-    }
+class PerformanceTest : BaseTest() {
 
     @Test
     @Order(1)
@@ -36,14 +28,15 @@ class PerformanceTest {
     fun `AUT_PERF_001_should_open_dialer_within_acceptable_latency`() {
         val commScreen = CommunicationsScreen(driver)
         
-        // Wait for call button to be visible
+        // Always get a fresh element for Compose Button (never cache!)
         WebDriverWait(driver, Duration.ofSeconds(10)).until {
             driver.findElement(commScreen.callButtonSelector).isDisplayed
         }
-        
-        // Measure tap to dialer latency
-        val startTime = System.currentTimeMillis()
-        commScreen.tapCallButton()
+        val start = System.currentTimeMillis()
+        driver.findElement(commScreen.callButtonSelector).click()
+        // TODO: дочекатися FakeDialerActivity
+        val elapsed = System.currentTimeMillis() - start
+        assertThat(elapsed).isLessThan(1800)
 
         val topicScreen = TopicSelectionScreen(driver)
         WebDriverWait(driver, Duration.ofSeconds(5)).until {
@@ -59,7 +52,7 @@ class PerformanceTest {
         }
         val endTime = System.currentTimeMillis()
         
-        val latency = endTime - startTime
+        val latency = endTime - start
         
         // Verify latency is within acceptable range
         assertThat(latency).isLessThanOrEqualTo(800) // Target: ≤ 800ms

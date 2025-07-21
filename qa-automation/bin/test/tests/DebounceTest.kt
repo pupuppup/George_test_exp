@@ -1,6 +1,6 @@
 // File: DebounceTest.kt
 // Purpose: Automation test for debounce logic (5 taps = 1 dialer/event)
-// Author: <your name>
+// Author: Taras Mylyi
 // Checks debounce window 1500ms
 
 package tests

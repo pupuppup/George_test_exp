@@ -1,7 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="md_theme_light_primary">#005FA3</color>
-    <color name="md_theme_light_onPrimary">#FFFFFF</color>
-    <color name="md_theme_dark_primary">#90CAF9</color>
-    <color name="md_theme_dark_onPrimary">#003355</color>
-    <!-- TODO: Add more colors as needed for real design -->
+    <!-- Основна палітра -->
+    <color name="background">#22222c</color>
+    <color name="surface">#15141a</color>
+    <color name="card_bg">#253149</color>
+    <color name="call_button">#3b92f2</color>
+    <color name="button_text">#ffffff</color>
+    <color name="icon_secondary">#3b92f2</color>
+    <color name="text_primary">#ffffff</color>
+    <color name="text_secondary">#3b92f2</color>
+    <color name="text_hint">#b0b0b0</color>
 </resources> 

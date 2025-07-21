@@ -1,6 +1,6 @@
 // File: LocalisationTest.kt
 // Purpose: Automation test for localisation (button text)
-// Author: <your name>
+// Author: Taras Mylyi
 // Checks UA/EN/SK text present
 
 package tests

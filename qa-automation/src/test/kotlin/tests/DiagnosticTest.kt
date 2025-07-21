@@ -1,5 +1,6 @@
 // File: DiagnosticTest.kt
 // Purpose: Diagnostic test to check all elements on screen
+// Author: Taras Mylyi
 // Test ID: DIAG-001
 // Priority: ★ Debug
 // Tags: debug

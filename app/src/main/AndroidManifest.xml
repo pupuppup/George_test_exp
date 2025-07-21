@@ -12,5 +12,15 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.FakeDialerActivity"
+            android:exported="true"
+            android:label="FakeDialer">
+            <intent-filter>
+                <action android:name="com.example.supportcall.FAKE_DIAL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="tel"/>
+            </intent-filter>
+        </activity>
     </application>
 </manifest> 

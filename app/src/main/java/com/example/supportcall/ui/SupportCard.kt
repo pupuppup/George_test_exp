@@ -1,6 +1,6 @@
 // File: SupportCard.kt
 // Purpose: Compose card styled as on screenshot (SK)
-// Author: <your name>
+// Author: Taras Mylyi
 
 package com.example.supportcall.ui
 
@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -54,14 +55,17 @@ fun SupportCard(
                     enabled = enabled,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .semantics {
-                            contentDescription = "Zavolať"
-                        },
+                        .semantics { contentDescription = "callButton" },
                     colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF223A5E))
                 ) {
                     Icon(Icons.Filled.Phone, contentDescription = null, tint = Color(0xFF4FC3F7))
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text("Zavolať", color = Color(0xFF4FC3F7), fontWeight = FontWeight.Bold)
+                    Text(
+                        "Zavolať",
+                        color = Color(0xFF4FC3F7),
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.semantics { contentDescription = "callButton" }
+                    )
                 }
             }
             Spacer(modifier = Modifier.width(16.dp))

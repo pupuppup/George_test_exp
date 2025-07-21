@@ -1,4 +1,5 @@
 // File: NoPermissionDialogTest.kt
+// Author: Taras Mylyi
 // Test ID: AUT-FN-002
 // Purpose: Critical test - no CALL_PHONE runtime permission dialog appears
 // Priority: ⭐ Critical
@@ -14,21 +15,11 @@ import org.openqa.selenium.support.ui.WebDriverWait
 import java.time.Duration
 import org.assertj.core.api.Assertions.assertThat
 import org.openqa.selenium.By
+import base.BaseTest
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
-class NoPermissionDialogTest {
-    private lateinit var driver: io.appium.java_client.android.AndroidDriver
-
-    @BeforeAll
-    fun setup() {
-        driver = DriverFactory.create()
-    }
-
-    @AfterAll
-    fun teardown() {
-        driver.quit()
-    }
+class NoPermissionDialogTest : BaseTest() {
 
     @Test
     @Order(1)
@@ -36,13 +27,11 @@ class NoPermissionDialogTest {
     fun `AUT_FN_002_should_not_show_CALL_PHONE_runtime_permission_dialog`() {
         val commScreen = CommunicationsScreen(driver)
         
-        // Wait for call button to be visible
+        // Always get a fresh element for Compose Button (never cache!)
         WebDriverWait(driver, Duration.ofSeconds(10)).until {
             driver.findElement(commScreen.callButtonSelector).isDisplayed
         }
-        
-        // Tap call button
-        commScreen.tapCallButton()
+        driver.findElement(commScreen.callButtonSelector).click()
 
         val topicScreen = TopicSelectionScreen(driver)
         WebDriverWait(driver, Duration.ofSeconds(5)).until {

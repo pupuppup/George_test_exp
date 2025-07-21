@@ -1,6 +1,6 @@
 // File: CommunicationsScreen.kt
 // Purpose: Page Object for Communications screen (support card, call button)
-// Author: <your name>
+// Author: Taras Mylyi
 // Used in automation tests
 
 package pages
@@ -12,8 +12,9 @@ import org.openqa.selenium.By
 class CommunicationsScreen(private val driver: AndroidDriver) {
     val supportCardSelector = By.xpath("//*[contains(@text, '24/7') or contains(@text, 'Підтримка') or contains(@text, 'Podpora')]")
     
-    // Updated locator based on diagnostic test - found 'Zavola┼е' on screen
-    val callButtonSelector = By.xpath("//*[contains(@text, 'Zavola┼е') or contains(@text, 'Зателефонувати') or contains(@text, 'Call')]")
+    // NOTE: Jetpack Compose renders Button as android.widget.Button, but the text is a separate TextView inside.
+    // Do NOT search by text! Always use By.className("android.widget.Button") for the main call button.
+    val callButtonSelector = By.className("android.widget.Button")
 
     fun tapCallButton() {
         driver.findElement(callButtonSelector).click()

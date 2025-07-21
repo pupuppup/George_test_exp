@@ -1,6 +1,6 @@
 // File: OfflineStateTest.kt
 // Purpose: Automation test for offline mode (banner, button disabled)
-// Author: <your name>
+// Author: Taras Mylyi
 // Checks offline toggle disables call button
 
 package tests

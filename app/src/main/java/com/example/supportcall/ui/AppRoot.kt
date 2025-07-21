@@ -1,6 +1,6 @@
 // File: AppRoot.kt
 // Purpose: Root composable with navigation, debug menu, offline toggle
-// Author: <your name>
+// Author: Taras Mylyi
 // Handles navigation and debug actions
 
 package com.example.supportcall.ui
@@ -17,18 +17,16 @@ fun AppRoot() {
     var showTopic by remember { mutableStateOf(false) }
 
     Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text("Support Call Demo") }
-            )
-        }
+        // topBar = {
+        //     TopAppBar(
+        //         title = { Text("Support Call Demo") }
+        //     )
+        // }
     ) { padding ->
         if (showTopic) {
             TopicSelectionScreen(onBack = { showTopic = false })
         } else {
             CommunicationsScreen(
-                isOffline = isOffline,
-                isLoggedIn = isLoggedIn,
                 onCallClick = { showTopic = true }
             )
         }

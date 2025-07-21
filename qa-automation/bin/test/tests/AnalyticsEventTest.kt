@@ -1,6 +1,6 @@
 // File: AnalyticsEventTest.kt
 // Purpose: Automation test for analytics event order/count
-// Author: <your name>
+// Author: Taras Mylyi
 // Checks support_call_tap, support_call_dialer_opened
 
 package tests
