@@ -1,0 +1,43 @@
+{
+  "examples": [
+    {
+      "eventName": "support_call_tap",
+      "timestamp": "2024-06-01T12:00:00Z",
+      "locale": "uk",
+      "networkState": "online",
+      "debounced": false
+    },
+    {
+      "eventName": "support_call_dialer_opened",
+      "timestamp": "2024-06-01T12:00:01Z",
+      "locale": "uk",
+      "networkState": "online",
+      "debounced": false
+    }
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AnalyticsEvent",
+  "type": "object",
+  "properties": {
+    "eventName": {
+      "type": "string",
+      "enum": ["support_call_tap", "support_call_dialer_opened"]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "locale": {
+      "type": "string",
+      "enum": ["en", "uk", "sk"]
+    },
+    "networkState": {
+      "type": "string",
+      "enum": ["online", "offline"]
+    },
+    "debounced": {
+      "type": "boolean"
+    }
+  },
+  "required": ["eventName", "timestamp", "locale", "networkState", "debounced"]
+} 

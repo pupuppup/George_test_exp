@@ -1,0 +1,7 @@
+<resources>
+    <color name="md_theme_light_primary">#005FA3</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_dark_primary">#90CAF9</color>
+    <color name="md_theme_dark_onPrimary">#003355</color>
+    <!-- TODO: Add more colors as needed for real design -->
+</resources> 

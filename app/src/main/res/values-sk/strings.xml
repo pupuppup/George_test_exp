@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Demo Podpora</string>
+    <string name="communications_screen_title">Komunikácia</string>
+    <string name="support_24_7_card_title">Podpora 24/7</string>
+    <string name="support_24_7_card_subtitle">Získajte pomoc s naliehavými problémami</string>
+    <string name="support_call_button">Zavolať</string>
+    <string name="support_call_accessibility">Zavolať na podporu 24/7</string>
+    <string name="client_centre">Client centre</string>
+    <string name="client_centre_abroad">Client centre from abroad</string>
+    <string name="offline_banner">Žiadne internetové pripojenie. Pripojte sa, prosím.</string>
+    <string name="simulate_offline">Simulovať offline</string>
+    <string name="show_analytics">Zobraziť analytiku</string>
+    <string name="clear_analytics">Vymazať analytiku</string>
+    <string name="topic_screen_title">Téma</string>
+    <string name="topic_screen_subtitle">O čom by ste chceli hovoriť?</string>
+</resources> 

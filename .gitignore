@@ -1,0 +1,36 @@
+# Android/IntelliJ
+.idea/
+*.iml
+.gradle/
+build/
+local.properties
+.DS_Store
+*.apk
+*.ap_*
+*.dex
+*.class
+*.log
+*.hprof
+captures/
+output.json
+
+# Gradle
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Appium
+node_modules/
+appium.log
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Test results
+qa-automation/build/
+qa-automation/.idea/
+qa-automation/.gradle/
+qa-automation/test-output/
+qa-automation/allure-results/
+qa-automation/.allure/ 

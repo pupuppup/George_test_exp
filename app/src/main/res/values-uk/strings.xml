@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Демо Підтримка</string>
+    <string name="communications_screen_title">Комунікації</string>
+    <string name="support_24_7_card_title">Підтримка 24/7</string>
+    <string name="support_24_7_card_subtitle">Отримайте допомогу з невідкладних питань</string>
+    <string name="support_call_button">Зателефонувати</string>
+    <string name="support_call_accessibility">Зателефонувати у підтримку 24/7</string>
+    <string name="client_centre">Client centre</string>
+    <string name="client_centre_abroad">Client centre from abroad</string>
+    <string name="offline_banner">Немає підключення до інтернету. Будь ласка, підключіться.</string>
+    <string name="simulate_offline">Симулювати офлайн</string>
+    <string name="show_analytics">Показати аналітику</string>
+    <string name="clear_analytics">Очистити аналітику</string>
+    <string name="topic_screen_title">Тема</string>
+    <string name="topic_screen_subtitle">Про що б ви хотіли поговорити?</string>
+</resources> 
