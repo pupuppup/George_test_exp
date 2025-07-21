@@ -1,7 +1,7 @@
 // File: LocalisationTest.kt
 // Author: Taras Mylyi
 // Test ID: AUT-LOC-UA, AUT-LOC-EN
-// Purpose: Nightly tests - localization verification for UA and EN
+// Purpose: Nightly tests - localization verification for EN and SK
 // Priority: ★ Nightly
 // Tags: nightly, locale
 
@@ -43,7 +43,7 @@ class LocalisationTest : BaseTest() {
     @Order(2)
     @Tag("nightly")
     @Tag("locale")
-    fun `AUT_LOC_SK_should_display_Slovak_call_button_text_and_dialer_opens`() {
+    fun `AUT_LOC_SK_should_display_Slovak_call_button_and_dialer_opens`() {
         val commScreen = CommunicationsScreen(driver)
         wait.until {
             driver.findElement(commScreen.callButtonSelector).isDisplayed
@@ -51,7 +51,8 @@ class LocalisationTest : BaseTest() {
         val button = driver.findElement(commScreen.callButtonSelector)
         assertThat(button.isDisplayed).isTrue()
         assertThat(button.isEnabled).isTrue()
-        commScreen.tapCallButton()
+        assertThat(button.text).contains("Zavolať")
+        driver.findElement(commScreen.callButtonSelector).click()
         assertThat(driver.currentPackage).isEqualTo("com.example.supportcall")
     }
 } 

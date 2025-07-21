@@ -4,7 +4,7 @@
 |-------------------------------|-------------|
 | Crash-free call action        | >99.9%      |
 | Debounce success              | (#tap events) == (#dialer launches) |
-| Localisation coverage         | EN / UA / SK |
+| Localisation coverage         | EN / SK |
 
 - Debounce window: 1500ms
 - ACTION_DIAL (no CALL_PHONE permission)

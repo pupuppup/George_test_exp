@@ -31,18 +31,12 @@ class DiagnosticTest {
     @Order(1)
     @Tag("debug")
     fun `DIAG_001_should_analyze_all_elements_on_screen`() {
-        // Wait for app to load
         Thread.sleep(3000)
-        
-        // Check if we're in the right app
         val currentPackage = driver.currentPackage
         println("Current package: $currentPackage")
         assertThat(currentPackage).isEqualTo("com.example.supportcall")
-        
-        // Find all elements with text
         val elementsWithText = driver.findElements(By.xpath("//*[@text]"))
-        println("Found ${elementsWithText.size} elements with text:")
-        
+        println("Found "+elementsWithText.size+" elements with text:")
         elementsWithText.forEach { element ->
             try {
                 val text = element.text
@@ -53,26 +47,18 @@ class DiagnosticTest {
                 println("Error getting element info: ${e.message}")
             }
         }
-        
-        // Try to find call button with different locators
         println("\nTrying different locators for call button:")
-        
         val locators = listOf(
-            "//*[contains(@text, 'Зателефонувати')]",
             "//*[contains(@text, 'Call')]",
             "//*[contains(@text, 'Zavolať')]",
-            "//*[contains(@text, 'зателефонувати')]",
-            "//*[contains(@text, 'call')]",
-            "//*[contains(@text, 'zavola')]",
             "//*[@text]",
             "//android.widget.Button",
             "//android.widget.TextView"
         )
-        
         locators.forEach { locator ->
             try {
                 val elements = driver.findElements(By.xpath(locator))
-                println("Locator '$locator': found ${elements.size} elements")
+                println("Locator '$locator': found "+elements.size+" elements")
                 elements.take(3).forEach { element ->
                     try {
                         println("  - Text: '${element.text}' | Class: ${element.getAttribute("className")}")
@@ -84,19 +70,16 @@ class DiagnosticTest {
                 println("Locator '$locator': error - ${e.message}")
             }
         }
-        
-        // Check if any elements contain call-related text
         val allElements = driver.findElements(By.xpath("//*"))
         val callRelatedElements = allElements.filter { element ->
             try {
                 val text = element.text.lowercase()
-                text.contains("телефон") || text.contains("call") || text.contains("zavola")
+                text.contains("call") || text.contains("zavola")
             } catch (e: Exception) {
                 false
             }
         }
-        
-        println("\nCall-related elements found: ${callRelatedElements.size}")
+        println("\nCall-related elements found: "+callRelatedElements.size)
         callRelatedElements.forEach { element ->
             try {
                 println("Call-related: '${element.text}' | Class: ${element.getAttribute("className")}")

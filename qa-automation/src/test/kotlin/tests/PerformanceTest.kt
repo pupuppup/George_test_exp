@@ -34,7 +34,7 @@ class PerformanceTest : BaseTest() {
         }
         val start = System.currentTimeMillis()
         driver.findElement(commScreen.callButtonSelector).click()
-        // TODO: дочекатися FakeDialerActivity
+        // TODO: wait for FakeDialerActivity
         val elapsed = System.currentTimeMillis() - start
         assertThat(elapsed).isLessThan(1800)
 

@@ -12,7 +12,7 @@ class NegativePathTest : BaseTest() {
 
     @Test
     fun `should not be able to call when button is disabled`() {
-        // TODO: Перевести додаток у offline перед перевіркою (інакше кнопка буде enabled)
+        // TODO: Switch app to offline before checking (otherwise button will be enabled)
         val commScreen = CommunicationsScreen(driver)
         // Always get a fresh element for Compose Button (never cache!)
         val button = driver.findElement(commScreen.callButtonSelector)
@@ -21,7 +21,7 @@ class NegativePathTest : BaseTest() {
 
     @Test
     fun `should return to topic selection screen after cancelling dialer`() {
-        // Викликаємо FakeDialerActivity, натискаємо Cancel, перевіряємо повернення
-        // TODO: реалізувати через startActivityForResult і RESULT_CANCELED
+        // TODO: Call FakeDialerActivity, tap Cancel, check return
+        // TODO: Implement via startActivityForResult and RESULT_CANCELED
     }
 } 

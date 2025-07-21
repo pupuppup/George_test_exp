@@ -29,13 +29,13 @@ class DebounceTest : BaseTest() {
         wait.until {
             driver.findElement(commScreen.callButtonSelector).isDisplayed
         }
-        // Симулюємо 5 тапів за 500ms
+        // Simulate 5 taps within 500ms
         repeat(5) {
             driver.findElement(commScreen.callButtonSelector).click()
             Thread.sleep(100)
         }
-        // Перевіряємо, що відкрився лише один FakeDialerActivity
+        // Check that only one FakeDialerActivity is opened
         assertThat(driver.currentPackage).isEqualTo("com.example.supportcall")
-        // TODO: перевірити, що створено лише один інтенція (можна через лог/лічильник)
+        // TODO: Check that only one intent is created (can be done via log/counter)
     }
 } 

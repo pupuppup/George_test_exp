@@ -39,8 +39,8 @@ class CallDialerTest : BaseTest() {
             driver.findElement(commScreen.callButtonSelector).isDisplayed
         }
         driver.findElement(commScreen.callButtonSelector).click()
-        // Перевіряємо, що відкрився FakeDialerActivity (currentPackage == com.example.supportcall)
+        // Check that FakeDialerActivity is opened (currentPackage == com.example.supportcall)
         assertThat(driver.currentPackage).isEqualTo("com.example.supportcall")
-        // TODO: перевірити номер у FakeDialerActivity через UI (text contains number)
+        // TODO: Check the number in FakeDialerActivity via UI (text contains number)
     }
 } 

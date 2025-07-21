@@ -60,7 +60,7 @@ class ClickTest {
         
         // 2. Try to find parent of text element
         try {
-            val textElement = driver.findElement(By.xpath("//*[contains(@text, 'Zavola┼е')]"))
+            val textElement = driver.findElement(By.xpath("//*[contains(@text, 'Zavolať') or contains(@text, 'Call')]") )
             println("Found text element: '${textElement.text}' | Class: ${textElement.getAttribute("className")}")
             
             // Try to click the text element itself

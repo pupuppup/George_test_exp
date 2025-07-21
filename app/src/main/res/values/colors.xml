@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Основна палітра -->
+    <!-- Main palette -->
     <color name="background">#22222c</color>
     <color name="surface">#15141a</color>
     <color name="card_bg">#253149</color>

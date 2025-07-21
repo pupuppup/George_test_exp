@@ -29,7 +29,7 @@ class OfflineStateTest {
     @Test
     fun `should disable call button and show offline banner when offline`() {
         // Open overflow menu and toggle offline
-        driver.findElement(By.xpath("//*[contains(@text, 'Simulювати офлайн') or contains(@text, 'Simulate Offline') or contains(@text, 'Simulovať offline')]")).click()
+        driver.findElement(By.xpath("//*[contains(@text, 'Simulate Offline') or contains(@text, 'Simulovať offline')]")).click()
         val offlineBanner = OfflineBanner(driver)
         Assertions.assertTrue(offlineBanner.isVisible())
         val commScreen = CommunicationsScreen(driver)

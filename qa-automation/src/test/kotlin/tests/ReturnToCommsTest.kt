@@ -22,6 +22,6 @@ class ReturnToCommsTest : BaseTest() {
 
     @Test
     fun `AUT_FN_004_should_return_to_Communications_screen_when_dialer_is_closed`() {
-        // TODO: після RESULT_CANCELED перевірити, що знову на CommunicationsScreen
+        // TODO: After RESULT_CANCELED, check that we are back on CommunicationsScreen
     }
 } 

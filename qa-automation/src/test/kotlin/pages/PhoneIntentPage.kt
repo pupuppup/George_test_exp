@@ -5,7 +5,6 @@ import org.openqa.selenium.By
 import org.assertj.core.api.Assertions.assertThat
 
 class PhoneIntentPage(private val driver: AndroidDriver) {
-    // Умовно, що є поле з номером телефону
     val phoneNumberField = By.id("phoneNumberField")
 
     fun verifyPhoneNumber(expectedNumber: String) {

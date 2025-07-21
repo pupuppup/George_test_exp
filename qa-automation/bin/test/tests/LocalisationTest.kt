@@ -26,15 +26,26 @@ class LocalisationTest {
     }
 
     @Test
-    fun `should display Ukrainian call button text`() {
+    fun `should display call button text`() {
         val commScreen = CommunicationsScreen(driver)
         WebDriverWait(driver, Duration.ofSeconds(10)).until {
             driver.findElement(commScreen.callButtonSelector).isDisplayed
         }
         val buttonText = driver.findElement(commScreen.callButtonSelector).text
         Assertions.assertTrue(
-            buttonText.contains("Зателефонувати") ||
             buttonText.contains("Call") ||
+            buttonText.contains("Zavolať")
+        )
+    }
+
+    @Test
+    fun `should display Slovak call button text`() {
+        val commScreen = CommunicationsScreen(driver)
+        WebDriverWait(driver, Duration.ofSeconds(10)).until {
+            driver.findElement(commScreen.callButtonSelector).isDisplayed
+        }
+        val buttonText = driver.findElement(commScreen.callButtonSelector).text
+        Assertions.assertTrue(
             buttonText.contains("Zavolať")
         )
     }
